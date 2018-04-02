@@ -68,8 +68,8 @@ $(document).on("click", "#add", function() {
     }
     console.log(asin);
     var id = window.localStorage.getItem("profileID");
-    $.post("/api/list/" + id, asin.asin).then(function(data){
-        console.log(data)
+    $.post("/api/list/" + id, asin).then(function(data){
+        console.log("this is data" + data)
     })
 })
 

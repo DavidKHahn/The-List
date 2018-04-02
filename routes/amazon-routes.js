@@ -91,7 +91,8 @@ module.exports = function(app) {
 
     app.post("/api/list/:id/", function(req, res){
         console.log(req.params.id);
-        res.send("hello")
+        console.log(req.body);
+        res.send(req.body)
     })
 
     // var id = req.params.id;
