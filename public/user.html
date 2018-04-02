@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <title>The List</title>
+</head>
+<body>
+    <!-- Top Nav Bar -->
+    <nav class="" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">TheList</a>
+          <ul class="right">
+            <li><a class="modal-trigger" href="#login-modal">Login</a></li>
+            <li><a class="modal-trigger" href="#signup-modal">Sign Up</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center">TheList</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Create personal blog-style shopping lists!</h5>
+            </div>
+            <div class="row center">
+                <a href="" id="start-button" class="btn-large waves-effect waves-light">Get Started</a>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    
+    <!--   Card Section   -->
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Dave's List</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>Check out my "on the go" web developer setup!</p>
+                        </div>
+                    </div>
+                </div>   
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Bella's List</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>My minimalist studio apartment!</p>
+                        </div>
+                    </div>
+                </div>    
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Eileen's List</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>Everything you need to begin podcasting like a pro!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="login-email" type="email" class="validate">
+                        <label for="login-email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="login-password" type="password" class="validate">
+                        <label for="login-password">Password</label>
+                    </div>
+                </div>
+            </form>    
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="login-btn" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="signup-btn" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l9 s12">
+              <h5 class="white-text">About Us</h5>
+              <p class="grey-text text-lighten-4">We are a team of UCLA Coding Bootcamp students working on this project like it's our full time job.</p>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Connect</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Link 1</a></li>
+                <li><a class="white-text" href="#!">Link 2</a></li>
+                <li><a class="white-text" href="#!">Link 3</a></li>
+                <li><a class="white-text" href="#!">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Section -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
