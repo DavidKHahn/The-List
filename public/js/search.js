@@ -20,12 +20,14 @@ search.itemSearch({
             console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
             console.log("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName);
             console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
+            console.log("ASIN #: " + results.Items.Item[i].ASIN);
             console.log("Image: " + results.Items.Item[i].LargeImage.URL);
             console.log("---------------")
 
             $(items).append("Product Name: " + results.Items.Item[i].ItemAttributes.Title)
             $(items).append("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName)
             $(items).append("Amazon Link: " + results.Items.Item[i].DetailPageURL)
+            $(items).append("ASIN #: " + results.Items.Item[i].ASIN)
             $(items).append("Image: <img src='" + results.Items.Item[i].LargeImage.URL + "'/>")
 
             //id will be changed to the search result div id
@@ -40,12 +42,14 @@ search.itemSearch({
             console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
             console.log("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName);
             console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
+            console.log("ASIN #: " + results.Items.Item[i].ASIN);
             console.log("Image: " + results.Items.Item[i].LargeImage.URL);
             console.log("---------------")
 
             $(items).append("Product Name: " + results.Items.Item[i].ItemAttributes.Title)
             $(items).append("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName)
             $(items).append("Amazon Link: " + results.Items.Item[i].DetailPageURL)
+            $(items).append("ASIN #: " + results.Items.Item[i].ASIN)
             $(items).append("Image: <img src='" + results.Items.Item[i].LargeImage.URL + "'/>")
 
             //id will be changed to the search result div id
