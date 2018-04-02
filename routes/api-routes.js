@@ -14,17 +14,17 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({})
+    db.List.findAll({})
       .then(function(dbPost) {
         res.json(dbPost);
       });
   });
 
   // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
+  app.get("/api/lists/:name", function(req, res) {
     db.Post.findAll({
       where: {
-        category: req.params.category
+        name: req.params.name
       }
     })
       .then(function(dbPost) {
