@@ -1,7 +1,7 @@
 
 
 $(".searchBtn").on("click", function () {
-
+event.preventDefault();
     var product = {
         name: $("#searchBar").val().trim()
     }
@@ -49,7 +49,11 @@ $(".searchBtn").on("click", function () {
                         $(items).append("Amazon Link: " + results.Items.Item[i].DetailPageURL)
                         $(items).append("ASIN #: " + results.Items.Item[i].ASIN)
                         $(items).append("Image: <img src='" + results.Items.Item[i].LargeImage.URL + "'/>") 
-                        $(items).append("<button id='add' data-asin=" + results.Items.Item[i].ASIN + ">Add</button></div>")
+                        $(items).append("<button id='add' data-asin='" + results.Items.Item[i].ASIN + 
+                        "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
+                        "' data-url='" + results.Items.Item[i].DetailPageURL +
+                        "' data-image='" + results.Items.Item[i].LargeImage.URL +
+                        "'>Add</button></div>")
             
                         //id will be changed to the search result div id
                         $(".results").append(items);
@@ -65,22 +69,30 @@ $(".searchBtn").on("click", function () {
 var cart = [];
 
 $(document).on("click", "#add", function() {
-    var asin = {
-        asin: $(this).data("asin")
+    var newItem = {
+        asin: $(this).data("asin"),
+        name: $(this).data("name"),
+        image: $(this).data("image"),
+        url: $(this).data("url")
     }
 
-    cart.push(asin.asin);
-    console.log(cart);
+    console.log(newItem);
+
+    $.post("/api/item/" + newItem.asin, newItem).then(function(data){
+        console.log("this is add " + data)
+    })
 
     
     $(document).on("click", "#create", function() {
         var id = window.localStorage.getItem("profileID");
         var total = {
-            asin: JSON.stringify(cart)
+            title: $("#title").val().trim(),
+            description: $("#description").val().trim()
+
         }
 
         $.post("/api/list/" + id, total).then(function(data){
-            console.log("this is data" + data)
+            console.log("this is create " + data)
         })
     
     })

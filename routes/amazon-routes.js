@@ -90,20 +90,42 @@ module.exports = function(app) {
     });
 
     app.post("/api/list/:id/", function(req, res){
-        console.log(req.params.id);
-        console.log(req.body.asin);
-        
+        console.log(req.params.id);        
 
         db.List.create({
+            title: req.body.title,
+            description: req.body.description
+        })
+        res.send(req.body.title)
+    })
+
+    app.post("/api/item/:name/", function(req, res){
+        console.log(req.params.name); 
+
+        db.Item.create({
             asin: req.body.asin,
-            UserId: req.params.id
+            name: req.body.name,
+            url: req.body.url,
+            image: req.body.url
         })
         res.send(req.body.asin)
     })
 
-    // var id = req.params.id;
+    app.delete("/api/item/:name", function(req, res) {
+        db.Item.destroy({
+          where: {
+            name: req.params.name
+          }
+        }).then(function(dbItem) {
+          res.json(dbItem);
+        });
+      });
 
-
+      app.get("/api/view", function(req, res) {
+        db.Item.findAll({}).then(function(dbItem) {
+          res.json(dbItem);
+        });
+      });
 
 }
 

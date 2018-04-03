@@ -1,7 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     var List = sequelize.define("List", {
 
-        asin: {
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
             len: [1]
@@ -12,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
 
         List.belongsTo(models.User, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     };
