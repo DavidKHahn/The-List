@@ -35,6 +35,7 @@ app.use(function(req, res, next) {
 // Setup Routes Here
 // =============================================================
 // EXAMPLE: require("./routes/post-api-routes.js")(app);
+require("./routes/api-routes")(app);
 require("./routes/login-routes.js")(app);
 require("./routes/amazon-routes.js")(app);
 
