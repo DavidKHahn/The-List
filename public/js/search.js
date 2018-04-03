@@ -16,24 +16,27 @@ event.preventDefault();
             
                     for (var i = 0; i < 11; i++) {
                         console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
-                        console.log("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName);
                         console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
                         console.log("ASIN #: " + results.Items.Item[i].ASIN);
                         console.log("Image: " + results.Items.Item[i].LargeImage.URL);
                         console.log("---------------")
             
-                        $(items).append("Product Name: " + results.Items.Item[i].ItemAttributes.Title)
-                        $(items).append("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName)
-                        $(items).append("Amazon Link: " + results.Items.Item[i].DetailPageURL)
-                        $(items).append("ASIN #: " + results.Items.Item[i].ASIN)
-                        $(items).append("Image: <img src='" + results.Items.Item[i].LargeImage.URL + "'/>")
+                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].LargeImage.URL + "'/> </th>")
+                        $(items).append("<td>Product Name: " + results.Items.Item[i].ItemAttributes.Title + "</td>")
+                        $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
+                        $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
+                        "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
+                        "' data-url='" + results.Items.Item[i].DetailPageURL +
+                        "' data-image='" + results.Items.Item[i].LargeImage.URL +
+                        "'><i class='material-icons'>add</i></a></tr>")
             
                         //id will be changed to the search result div id
                         $(".results").append(items);
                     };
                 }
                 else {
-            
+
+                    $(".results").empty();
                     var items = $("<tbody>")
             
                     for (var i = 0; i < results.Items.Item.length; i++) {
@@ -74,6 +77,9 @@ $(document).on("click", "#add", function() {
         url: $(this).data("url"),
         ListId: listId
     }
+
+    $(".addItem").append("<p>" + newItem.name + "</p>")
+    
 
     console.log(newItem);
 
