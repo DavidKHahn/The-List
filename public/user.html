@@ -18,7 +18,7 @@
 <body>
     <!-- Top Nav Bar -->
     <main>
-        <nav class="" role="navigation">
+        <nav class="cyan darken-1" role="navigation">
             <button data-target="slide-out" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </button>
@@ -73,7 +73,7 @@
             <div class="section">
                 <div class="row">
                     <form>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12">
                             <input placeholder="Title" id="title" type="text" class="validate">
                             <label for="title">Title</label>
                         </div>
@@ -90,25 +90,43 @@
                         <!-- <div class="input-field col s6">
                             <input placeholder="List Description" id="description" type="text" class="validate">
                             <label for="description">List Description</label>-->
-                        <div class="btn" id="create">
-                            <span>Create</span>
+                        <!-- Modal Trigger -->
+                        <button data-target="modal1" class="btn modal-trigger">Create List</button>
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Modal Header</h4>
+                                <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
                         </div>
+
+                    </form>
                 </div>
-                <div class="input-field col s6">
-                    <input placeholder="Input product here" id="searchBar" type="text" class="validate">
-                    <label for="searchBar">Search</label>
-                </div>
-
-
-
-
-
-                <div class="btn searchBtn">
-                    <span>Submit</span>
-                </div>
-
-                </form>
             </div>
+            <div class="section">
+                <div class="row results">
+
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s6">
+            <input placeholder="Input product here" id="searchBar" type="text" class="validate">
+            <label for="searchBar">Search</label>
+        </div>
+
+
+
+
+
+        <div class="btn searchBtn">
+            <span>Submit</span>
+        </div>
+
+        </form>
+        </div>
         </div>
         <div class="section">
             <div class="row results">
@@ -178,7 +196,7 @@
         </div>
     </main>
     <!-- Footer -->
-    <footer class="page-footer">
+    <footer class="page-footer cyan darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l9 s12">
@@ -204,22 +222,36 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
+        <div class="footer-copyright cyan">
             <div class="container">
                 © 2018 Copyright
             </div>
         </div>
     </footer>
 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+    <!-- Scripts Section -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <!--<script src="js/index.js"></script>-->
-    <script src="js/search.js"></script>
+    <script src="js/index.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        });
-    </script>
+
+<!--<script src="js/index.js"></script>-->
+<script src="js/search.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+
+    // modal create list
+    var elem = document.querySelector('.modal1');
+    var instance = M.Modal.init(elem, options);
+    // Or with jQuery 
+    $(document).ready(function () {
+        $('.modal1').modal();
+    });
+</script>
 
 </body>
 

@@ -7,3 +7,12 @@
   main {
       flex: 1 0 auto;
   }
+
+  .sidenav-trigger {
+      background: none;
+      border: none;
+  }
+
+  .material-icons {
+      color: white;
+  }
