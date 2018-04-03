@@ -67,38 +67,40 @@ event.preventDefault();
 
 
 var cart = [];
+var listId;
 
 $(document).on("click", "#add", function() {
     var newItem = {
         asin: $(this).data("asin"),
         name: $(this).data("name"),
         image: $(this).data("image"),
-        url: $(this).data("url")
+        url: $(this).data("url"),
+        ListId: listId
     }
 
     console.log(newItem);
 
-    $.post("/api/item/" + newItem.asin, newItem).then(function(data){
+    $.post("/api/item/" + newItem.ListId, newItem).then(function(data){
         console.log("this is add " + data)
     })
 
     
-    $(document).on("click", "#create", function() {
-        var id = window.localStorage.getItem("profileID");
-        var total = {
-            title: $("#title").val().trim(),
-            description: $("#description").val().trim()
-
-        }
-
-        $.post("/api/list/" + id, total).then(function(data){
-            console.log("this is create " + data)
-        })
-    
-    })
 })
 
 
+$(document).on("click", "#create", function() {
+    var id = window.localStorage.getItem("profileID");
+    var total = {
+        title: $("#title").val().trim(),
+        description: $("#description").val().trim()
 
+    }
+
+    $.post("/api/list/" + id, total).then(function(data){
+        console.log("this is create " + data)
+        listId = data;
+    })
+
+})
 
 

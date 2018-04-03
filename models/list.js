@@ -22,5 +22,14 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
+    List.associate = function (models) {
+
+        List.hasMany(models.Item, {
+            foreignKey: {
+                allowNull: true
+            }
+        });
+    };
+
     return List;
 };

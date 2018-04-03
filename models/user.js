@@ -41,8 +41,13 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull: true
             }
         });
+
     };
 
+    // User.associate = function (models) {
+
+        
+    // };
 
     return User;
 }

@@ -90,23 +90,31 @@ module.exports = function(app) {
     });
 
     app.post("/api/list/:id/", function(req, res){
-        console.log(req.params.id);        
+        console.log("list/id", req.params.id);        
 
         db.List.create({
             title: req.body.title,
-            description: req.body.description
+            description: req.body.description,
+            UserId: req.params.id
+        }).then(function(req2) {
+           
+            console.log(req2.dataValues.id)
+            res.json(req2.dataValues.id);
         })
-        res.send(req.body.title)
+
+        
     })
 
     app.post("/api/item/:name/", function(req, res){
         console.log(req.params.name); 
+        console.log(req.body);
 
         db.Item.create({
             asin: req.body.asin,
             name: req.body.name,
             url: req.body.url,
-            image: req.body.url
+            image: req.body.image,
+            ListId: req.body.ListId
         })
         res.send(req.body.asin)
     })
