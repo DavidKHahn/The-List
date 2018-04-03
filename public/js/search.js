@@ -1,6 +1,6 @@
 
 
-$(".searchBtn").on("click", function () {
+$(document).on("click", ".searchBtn",function () {
 event.preventDefault();
     var product = {
         name: $("#searchBar").val().trim()
@@ -34,26 +34,23 @@ event.preventDefault();
                 }
                 else {
             
-                    var items = $("<div>")
+                    var items = $("<tbody>")
             
                     for (var i = 0; i < results.Items.Item.length; i++) {
                         console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
-                        console.log("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName);
                         console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
                         console.log("ASIN #: " + results.Items.Item[i].ASIN);
                         console.log("Image: " + results.Items.Item[i].LargeImage.URL);
                         console.log("---------------")
             
-                        $(items).append("<div id='" + results.Items.Item[i].ASIN + "'>Product Name: " + results.Items.Item[i].ItemAttributes.Title)
-                        $(items).append("Product Type: " + results.Items.Item[i].ItemAttributes.ProductTypeName)
-                        $(items).append("Amazon Link: " + results.Items.Item[i].DetailPageURL)
-                        $(items).append("ASIN #: " + results.Items.Item[i].ASIN)
-                        $(items).append("Image: <img src='" + results.Items.Item[i].LargeImage.URL + "'/>") 
-                        $(items).append("<button id='add' data-asin='" + results.Items.Item[i].ASIN + 
+                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].LargeImage.URL + "'/> </th>")
+                        $(items).append("<td>Product Name: " + results.Items.Item[i].ItemAttributes.Title + "</td>")
+                        $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
+                        $(items).append("<a class='btn-floating btn-large waves-effect waves-light red' id='add' data-asin='" + results.Items.Item[i].ASIN + 
                         "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
                         "' data-url='" + results.Items.Item[i].DetailPageURL +
                         "' data-image='" + results.Items.Item[i].LargeImage.URL +
-                        "'>Add</button></div>")
+                        "'><i class='material-icons'>add</i></a></tr>")
             
                         //id will be changed to the search result div id
                         $(".results").append(items);
@@ -92,9 +89,19 @@ $(document).on("click", "#create", function() {
     var id = window.localStorage.getItem("profileID");
     var total = {
         title: $("#title").val().trim(),
-        description: $("#description").val().trim()
+        description: $("#textarea1").val().trim()
 
     }
+    $(".title").html("<h4>Title:</h4>");
+    $(".title").append("<p>" + total.title+ "</p>");
+    $(".description").html("<h4>Description:</h4>");
+    $(".description").append("<p>" + total.description + "</p>");
+    $("#product-search").empty();
+    $("#product-search").html("<div class='input-field col s6'><input id='searchBar' type='text' class='validate'><label for='searchBar'>Search</label></div>");
+    $("#product-search").append("<div data-target='modal1' class='btn modal-trigger searchBtn'><span>Submit</span></div>")
+
+
+
 
     $.post("/api/list/" + id, total).then(function(data){
         console.log("this is create " + data)

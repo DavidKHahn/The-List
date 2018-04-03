@@ -73,63 +73,86 @@
             <div class="section">
                 <div class="row">
                     <form>
-                        <div class="input-field col s12">
+                        <div class="title input-field col s12">
                             <input placeholder="Title" id="title" type="text" class="validate">
                             <label for="title">Title</label>
                         </div>
                         <div class="row">
                             <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                        <label for="textarea1">Textarea</label>
-                                    </div>
+                                <div class="description input-field col s12">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Textarea</label>
                                 </div>
                             </form>
                         </div>
-                        <!-- <div class="input-field col s6">
+                        <div id="product-search">
+                            <!-- <div class="input-field col s6">
                             <input placeholder="List Description" id="description" type="text" class="validate">
                             <label for="description">List Description</label>-->
+                            <!-- Modal Trigger -->
+                            <button class="btn" id="create">Create List</button>
+                        </div>
                         <!-- Modal Trigger -->
-                        <button data-target="modal1" class="btn modal-trigger">Create List</button>
+                        <!-- <button data-target="modal1" class="btn modal-trigger">Create List</button> -->
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                                <h4>Modal Header</h4>
-                                <p>A bunch of text</p>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Item Image</th>
+                                            <th>Item Name</th>
+                                            <th>Item Description</th>
+                                        </tr>
+                                    </thead>
+
+                                    <div class="results"></div>
+                                    <!-- <tbody class="results">
+                                        <tr>
+                                            <th>
+                                                <img class="responsive-img" src="cool_pic.jpg">
+                                            </th>
+                                            <td>Lollipop</td>
+                                            <td>$7.00</td>
+                                            <td>
+                                                <a class="btn-floating btn-large waves-effect waves-light red">
+                                                    <i class="material-icons">add</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody> -->
+                                </table>
+
                             </div>
                             <div class="modal-footer">
-                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Finished</a>
                             </div>
                         </div>
 
                     </form>
                 </div>
             </div>
-            <div class="section">
-                <div class="row results">
-
-                </div>
-            </div>
-        </div>
-        <div class="input-field col s6">
-            <input placeholder="Input product here" id="searchBar" type="text" class="validate">
-            <label for="searchBar">Search</label>
-        </div>
-
-
-
-
-
-        <div class="btn searchBtn">
-            <span>Submit</span>
         </div>
 
         </form>
         </div>
         </div>
+
+        </div>
+        <!-- <div class="input-field col s6">
+            <input placeholder="Input product here" id="searchBar" type="text" class="validate">
+            <label for="searchBar">Search</label>
+        </div>
+        <div data-target="modal1" class="btn modal-trigger searchBtn">
+            <span>Submit</span>
+        </div> -->
+
+        </form>
+        </div>
+        </div>
         <div class="section">
-            <div class="row results">
+            <div class="row">
 
             </div>
         </div>
@@ -236,22 +259,22 @@
     <script src="js/index.js"></script>
 
 
-<!--<script src="js/index.js"></script>-->
-<script src="js/search.js"></script>
+    <!--<script src="js/index.js"></script>-->
+    <script src="js/search.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
 
-    // modal create list
-    var elem = document.querySelector('.modal1');
-    var instance = M.Modal.init(elem, options);
-    // Or with jQuery 
-    $(document).ready(function () {
-        $('.modal1').modal();
-    });
-</script>
+        // modal create list
+        var elem = document.querySelector('.modal1');
+        var instance = M.Modal.init(elem);
+        // Or with jQuery 
+        $(document).ready(function () {
+            $('.modal1').modal();
+        });
+    </script>
 
 </body>
 
