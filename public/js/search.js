@@ -36,7 +36,7 @@ event.preventDefault();
                 }
                 else {
 
-                    $(".results").empty();
+                    
                     var items = $("<tbody>")
             
                     for (var i = 0; i < results.Items.Item.length; i++) {
@@ -70,6 +70,7 @@ var cart = [];
 var listId;
 
 $(document).on("click", "#add", function() {
+    $(".results").empty();
     var newItem = {
         asin: $(this).data("asin"),
         name: $(this).data("name"),
