@@ -51,7 +51,7 @@ $("#signup-btn").on("click", function(event) {
           M.toast({html: 'Registration Successful'});
           window.localStorage.setItem("token", data.token);
           window.localStorage.setItem("profileID", data.id);
-          window.location = "/user/";
+          window.location = "/user";
         }
         else {
           M.toast({html: "Error occured: Try Again"});
@@ -95,7 +95,7 @@ $("#login-btn").on("click", function(event) {
             // direct to profile page
             window.localStorage.setItem("token", response.token);
             window.localStorage.setItem("profileID", response.id);
-            window.location = "/user/";
+            window.location = "/user";
             M.toast({html: 'Login Successful'});
           })
 
