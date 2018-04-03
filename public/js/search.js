@@ -21,9 +21,9 @@ event.preventDefault();
                         console.log("Image: " + results.Items.Item[i].LargeImage.URL);
                         console.log("---------------")
             
-                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].LargeImage.URL + "'/> </th>")
-                        $(items).append("<td>Product Name: " + results.Items.Item[i].ItemAttributes.Title + "</td>")
-                        $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
+                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].MediumImage.URL + "'/> </th>")
+                        $(items).append("<td>" + results.Items.Item[i].ItemAttributes.Title + "</td>")
+                        // $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
                         $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
                         "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
                         "' data-url='" + results.Items.Item[i].DetailPageURL +
@@ -46,9 +46,9 @@ event.preventDefault();
                         console.log("Image: " + results.Items.Item[i].LargeImage.URL);
                         console.log("---------------")
             
-                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].LargeImage.URL + "'/> </th>")
-                        $(items).append("<td>Product Name: " + results.Items.Item[i].ItemAttributes.Title + "</td>")
-                        $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
+                        $(items).append("<tr><th> <img class='responsive-img' src='" + results.Items.Item[i].MediumImage.URL + "'/> </th>")
+                        $(items).append("<td>" + results.Items.Item[i].ItemAttributes.Title + "</td>")
+                        // $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
                         $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
                         "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
                         "' data-url='" + results.Items.Item[i].DetailPageURL +
