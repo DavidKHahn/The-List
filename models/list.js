@@ -1,5 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var List = sequelize.define("List", {
+
         asin: {
             type: DataTypes.STRING,
             allowNull: false,

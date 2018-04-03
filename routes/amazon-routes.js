@@ -91,8 +91,14 @@ module.exports = function(app) {
 
     app.post("/api/list/:id/", function(req, res){
         console.log(req.params.id);
-        console.log(req.body);
-        res.send(req.body)
+        console.log(req.body.asin);
+        
+
+        db.List.create({
+            asin: req.body.asin,
+            UserId: req.params.id
+        })
+        res.send(req.body.asin)
     })
 
     // var id = req.params.id;
