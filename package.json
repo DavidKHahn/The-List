@@ -21,6 +21,8 @@
     "amazon-affiliate-api": "0.0.5",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "init": "^0.1.2",
+    "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "rand-token": "^0.4.0",
     "sequelize": "^4.37.4"
