@@ -26,7 +26,7 @@ $(document).on("click", ".searchBtn", function () {
                 resultHtml += "</tr>";
 
             };
-            console.log(resultHtml);
+
             $(".results").append(resultHtml);
         }
         else {
@@ -67,7 +67,6 @@ $(document).on("click", ".searchBtn", function () {
                 resultHtml += "</tr>";
 
             };
-            console.log(resultHtml);
             $(".results").append(resultHtml);
         }
     }
@@ -93,7 +92,7 @@ $(document).on("click", "#add", function () {
     }
     $(".addItem").append("<p id='added-header'>Product # " + number + ":</p>");
     $(".addItem").append("<p id='added-title'>" + newItem.name + "</p>");
-    $(".addItem").append('<div class="added-desc input-field col s12"><textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Product #' + number + ' Description</label></div>');
+    $(".addItem").append('<div class="added-desc input-field col s10"><textarea id="textarea2" class="materialize-textarea"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small red' id='delete-btn'><i class='material-icons'>delete</i></a></div>");
 
     number++;
 
