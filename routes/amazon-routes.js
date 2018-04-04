@@ -68,44 +68,44 @@ var search = amazon.createClient({
 //     console.log(err);
 // });
 
-module.exports = function(app) {
-    app.post("/api/search", function(req, res) {
-        
+module.exports = function (app) {
+    app.post("/api/search", function (req, res) {
+
         console.log(req.body.name);
         var keyword = req.body.name;
-        
+
         search.itemSearch({
-            
+
             //keyword will come from the user input, will change to the class/id when ready                
             keywords: keyword,
             responseGroup: 'ItemAttributes,Images'
         }).then(function (results) {
             console.log("---------------")
             res.json(results);
-            
+
         }).catch(function (err) {
             console.log(err);
-        });    
+        });
     });
 
-    app.post("/api/list/:id/", function(req, res){
-        console.log("list/id", req.params.id);        
+    app.post("/api/list/:id/", function (req, res) {
+        console.log("list/id", req.params.id);
 
         db.List.create({
             title: req.body.title,
             description: req.body.description,
             UserId: req.params.id
-        }).then(function(req2) {
-           
+        }).then(function (req2) {
+
             console.log(req2.dataValues.id)
             res.json(req2.dataValues.id);
         })
 
-        
+
     })
 
-    app.post("/api/item/:name/", function(req, res){
-        console.log(req.params.name); 
+    app.post("/api/item/:name/", function (req, res) {
+        console.log(req.params.name);
         console.log(req.body);
 
         db.Item.create({
@@ -118,22 +118,54 @@ module.exports = function(app) {
         res.send(req.body.asin)
     })
 
-    app.delete("/api/item/:name", function(req, res) {
+    app.delete("/api/item/:asin", function (req, res) {
         db.Item.destroy({
-          where: {
-            name: req.params.name
-          }
-        }).then(function(dbItem) {
-          res.json(dbItem);
+            where: {
+                asin: req.params.asin
+            }
+        }).then(function (dbItem) {
+            res.json(dbItem);
         });
-      });
+    });
 
-      app.get("/api/view", function(req, res) {
-        db.Item.findAll({}).then(function(dbItem) {
-          res.json(dbItem);
+    app.get("/api/view", function (req, res) {
+        db.Item.findAll({}).then(function (dbItem) {
+            res.json(dbItem);
         });
-      });
+    });
 
+    app.post("/api/nav", function (req, res) {
+
+        console.log("backend" + JSON.stringify(req.body, null, 2))
+
+        db.User.findOne({
+            where: {
+                token: req.body.token
+            }
+        }).then(function (dbUser) {
+            res.json(dbUser);
+        })
+    })
+
+
+    app.put("/api/info/:asin", function (req, res) {
+
+
+        newDescription = JSON.stringify(req.body.description)
+        newAsin = JSON.stringify(req.body.tempASIN)
+        console.log(newAsin);
+
+        db.Item.update({
+            description: newDescription
+        },
+            {
+                where: {
+                    asin: req.params.asin
+                }
+            })
+
+        res.send(req.body);
+    })
 }
 
 

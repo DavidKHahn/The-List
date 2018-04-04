@@ -39,3 +39,22 @@ p {
 .added-desc {
     padding-left: 0px !important;
 }
+
+#textarea2 {
+    width: 90%;
+    max-width: auto;
+    float: left;
+}
+
+#delete-btn{
+    float: right;
+    margin-left:5px;
+}
+
+.finish-btn {
+    width: 90%;
+    text-align: center;
+}
+
+
+

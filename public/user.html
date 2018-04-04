@@ -75,10 +75,15 @@
                             <label for="textarea1">List Description</label>
                         </div>
                         
-                        <div class="addItem col s12"></div>
+                        <div class="addItem row"></div>
+                        
+
                         
                         <div id="product-search">
                             <button class="btn cyan" id="create">Create List</button>
+                        </div>
+                        <br><br><br>
+                        <div id="finish-btn">
                         </div>
                         <!-- Modal Trigger -->
                         <!-- <button data-target="modal1" class="btn modal-trigger">Create List</button> -->
@@ -196,7 +201,7 @@
     <!-- Scripts Section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
 
 
     <!--<script src="js/index.js"></script>-->
@@ -212,7 +217,7 @@
         var instance = M.Modal.init(elem);
         // Or with jQuery 
         $(document).ready(function () {
-            $('.modal1').modal();
+            $('#modal1').modal();
         });
 
         $('#logOutBtn').on("click", function(){
