@@ -81,7 +81,6 @@ module.exports = function(app) {
             responseGroup: 'ItemAttributes,Images'
         }).then(function (results) {
             console.log("---------------")
-            
             res.json(results);
             
         }).catch(function (err) {
