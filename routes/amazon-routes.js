@@ -128,8 +128,12 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/view", function (req, res) {
-        db.Item.findAll({}).then(function (dbItem) {
+    app.get("/api/view/:listid", function (req, res) {
+        db.Item.findAll({
+            where: {
+                id: req.params.listid
+            }
+        }).then(function (dbItem) {
             res.json(dbItem);
         });
     });
@@ -166,6 +170,12 @@ module.exports = function (app) {
 
         res.send(req.body);
     })
+
+
+
+    // app.get("api/listpage/:listid", function(req, res){
+
+    // })
 }
 
 

@@ -132,6 +132,7 @@ $(document).on("click", "#create", function () {
 
     $.post("/api/list/" + id, total).then(function (data) {
         console.log("this is create " + data)
+        window.localStorage.setItem("listid", data)
         listId = data;
     })
 
