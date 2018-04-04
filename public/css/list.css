@@ -39,11 +39,11 @@ img {
   text-align: center;
 }
 
-.container:hover .image {
+.container .image:hover {
   opacity: 0.3;
 }
 
-.container:hover .middle {
+.image-container:hover .middle {
   opacity: 1;
 }
 

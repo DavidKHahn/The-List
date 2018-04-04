@@ -91,11 +91,11 @@ $(document).on("click", "#add", function () {
         ListId: listId
     }
 
-    var newDiv = $("<div id='" + newItem.asin + "'>")
+    var newDiv = $("<div class='col l12' id='" + newItem.asin + "'>")
 
     $(newDiv).append("<p id='added-header'>Product # " + number + ":</p>");
     $(newDiv).append("<p id='added-title'>" + newItem.name + "</p>");
-    $(newDiv).append('<div class="added-desc input-field col s10"><textarea id="textarea2"  class="materialize-textarea ta' + newItem.asin + '"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small green' id='update-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>add</i></a><a class='btn-floating btn-small red' id='delete-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>delete</i></a></div>");
+    $(newDiv).append('<div class="added-desc input-field col s10"><textarea id="textarea2"  class="materialize-textarea ta' + newItem.asin + '"></textarea><label for="textarea2">Product #' + number + " Description</label><a class='btn-floating btn-small green' id='update-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>add</i></a><a class='btn-floating btn-small red' id='delete-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>delete</i></a></div>");
     $("#finish-btn").html("<div class='btn cyan finish-btn'>Finish List</div>")
 
     $(".addItem").append(newDiv)
