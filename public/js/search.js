@@ -95,14 +95,14 @@ $(document).on("click", "#add", function () {
 
     $(newDiv).append("<p id='added-header'>Product # " + number + ":</p>");
     $(newDiv).append("<p id='added-title'>" + newItem.name + "</p>");
-    $(newDiv).append('<div class="added-desc input-field col s10"><textarea id="textarea2" class="materialize-textarea"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small red' id='delete-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>delete</i></a></div>");
+    $(newDiv).append('<div class="added-desc input-field col s10"><textarea id="textarea2"  class="materialize-textarea ta' + newItem.asin + '"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small green' id='update-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>add</i></a><a class='btn-floating btn-small red' id='delete-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>delete</i></a></div>");
     $("#finish-btn").html("<div class='btn cyan finish-btn'>Finish List</div>")
 
     $(".addItem").append(newDiv)
 
     number++;
 
-    
+
 
     console.log(newItem);
 
@@ -128,7 +128,7 @@ $(document).on("click", "#create", function () {
     $("#product-search").empty();
     $("#product-search").html("<div class='input-field col s6'><input id='searchBar' type='text' class='validate'><label for='searchBar'>Product Search</label></div>");
     $("#product-search").append("<div data-target='modal1' class='btn modal-trigger searchBtn cyan'>Search</div>")
-    
+
 
     $.post("/api/list/" + id, total).then(function (data) {
         console.log("this is create " + data)
@@ -137,40 +137,62 @@ $(document).on("click", "#create", function () {
 
 })
 
-$(document).ready(function(){
-    $.post("/api/nav", {token: window.localStorage.getItem("token")}).then(function(data){
-   
+$(document).ready(function () {
+    $.post("/api/nav", { token: window.localStorage.getItem("token") }).then(function (data) {
+
         console.log("frontend data" + JSON.stringify(data));
-      if (!data){  
-        window.localStorage.clear();  
-      }
-      else {
-  
-        $('.name').html(data.first_name + "&nbsp;&nbsp;" + data.last_name);
-        $('.email').html(data.email + "&nbsp;&nbsp;");
-        
-      }
-    });  
-  });
+        if (!data) {
+            window.localStorage.clear();
+        }
+        else {
 
-$(document).ready(function(){
+            $('.name').html(data.first_name + "&nbsp;&nbsp;" + data.last_name);
+            $('.email').html(data.email + "&nbsp;&nbsp;");
 
-
-
-  $(document).on("click", "#delete-btn", deleteItem)
-
-  function deleteItem(event) {
-    event.stopPropagation();
-    var asin = $(this).data("asin");
-    $.ajax({
-      method: "DELETE",
-      url: "/api/item/" + asin
-    }).then(function(){
-        console.log("item deleted")
-        $("#" + asin).empty();
-
+        }
     });
-  }
+});
+
+$(document).ready(function () {
+
+
+
+    $(document).on("click", "#delete-btn", deleteItem)
+
+    function deleteItem(event) {
+        event.stopPropagation();
+        var asin = $(this).data("asin");
+        $.ajax({
+            method: "DELETE",
+            url: "/api/item/" + asin
+        }).then(function () {
+            console.log("item deleted")
+            $("#" + asin).empty();
+
+        });
+    }
+
+    $(document).on("click", "#update-btn", function () {
+
+        var asin = $(this).data("asin");
+        var itemDescription = $(".ta" + asin).val();
+
+
+        $("#addItem").append("<p>" + itemDescription + "</p>")
+
+        $.ajax({
+            method: "PUT",
+            url: "/api/info/" + asin,
+            data: {
+                description: itemDescription,
+                tempASIN: asin
+            }
+        }).then(function (data) {
+            console.log(data)
+        })
+
+
+    })
 
 })
 

@@ -47,8 +47,8 @@ p {
 }
 
 #delete-btn{
-    float: left;
-    margin-left: 10px;
+    float: right;
+    margin-left:5px;
 }
 
 .finish-btn {
