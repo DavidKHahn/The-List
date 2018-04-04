@@ -131,7 +131,7 @@ module.exports = function (app) {
     app.get("/api/view/:listid", function (req, res) {
         db.Item.findAll({
             where: {
-                id: req.params.listid
+                ListId: req.params.listid
             }
         }).then(function (dbItem) {
             res.json(dbItem);
@@ -173,9 +173,15 @@ module.exports = function (app) {
 
 
 
-    // app.get("api/listpage/:listid", function(req, res){
+    app.get("api/listpage/:listid", function(req, res){
+        db.List.findOne({
+            where: {
+                id: req.params.listid
+            }
+        })
 
-    // })
+        res.json(req.body)
+    })
 }
 
 

@@ -21,4 +21,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/user.html"));
   });
 
+  app.get("/finished", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/list2.html"));
+  })
+
 };

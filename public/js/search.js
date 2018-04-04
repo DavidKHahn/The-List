@@ -195,6 +195,8 @@ $(document).ready(function () {
 
     })
 
+    $(document).on("click", "#finish-btn", function() {
+        window.location.href = "/finished";
+    })
 })
-
 

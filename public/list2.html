@@ -43,8 +43,8 @@
                     <br>
                     <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
                     <br>
-                    <h3>How to build the ultimate PC gaming setup</h3>
-                    <p>PC gaming is undeniably one of the coolest corners of technology today. Between the ever-increasing core
+                    <h3 id="list-name">How to build the ultimate PC gaming setup</h3>
+                    <p id="list-description">PC gaming is undeniably one of the coolest corners of technology today. Between the ever-increasing core
                         count in consumer processors and higher compute power of graphics cards, computers are more powerful
                         than ever. And, beyond towers of power, gaming monitors are only getting bigger, gaming peripherals
                         are becoming wireless and virtual reality is rising in ubiquity.</p>
@@ -62,17 +62,17 @@
                     
                     <div class="image-container">
                         
-                        <img class="image" src="/images/monitor.jpg">
+                        <img class="image" id="image1">
                         <div class="middle">
                             <div class="text">
-                                <a href="https://www.amazon.com/PG27AQ-3840x2160-G-SYNC-Gaming-Monitor/dp/B01AWGY9MG">Buy Now</a>
+                                <a id="link1">Buy Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col l5">
-                    <h6>ASUS ROG SWIFT PG27AQ 27" 4K/UHD</h6>
-                    <p>If you're spending upward of $900 on a gaming monitor, you better be getting the best of the best. Fortunately,
+                    <h6 id="name1">ASUS ROG SWIFT PG27AQ 27" 4K/UHD</h6>
+                    <p id="description1">If you're spending upward of $900 on a gaming monitor, you better be getting the best of the best. Fortunately,
                         the Asus ROG Swift PG27A offers a ton for its premium price, including a gorgeous and colorful 27-inch
                         4K display and Nvidia G-Sync support for extra-smooth performance. Factor in its solid speakers,
                         intuitive interface and impressive ergonomics, and you've got an excellent high-end option for folks
@@ -84,8 +84,8 @@
                     <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
                     <br>
                 <div class="col l5">
-                    <h6>ASUS ROG SWIFT PG27AQ 27" 4K/UHD</h6>
-                    <p>If you're spending upward of $900 on a gaming monitor, you better be getting the best of the best. Fortunately,
+                    <h6 id="name2">ASUS ROG SWIFT PG27AQ 27" 4K/UHD</h6>
+                    <p id="description2">If you're spending upward of $900 on a gaming monitor, you better be getting the best of the best. Fortunately,
                         the Asus ROG Swift PG27A offers a ton for its premium price, including a gorgeous and colorful 27-inch
                         4K display and Nvidia G-Sync support for extra-smooth performance. Factor in its solid speakers,
                         intuitive interface and impressive ergonomics, and you've got an excellent high-end option for folks
@@ -93,10 +93,10 @@
                 </div>
                 <div class="col l5">
                     <div class="image-container">
-                        <img class="image" src="/images/monitor.jpg">
+                        <img id="image2" class="image">
                         <div class="middle">
                             <div class="text">
-                                <a href="https://www.amazon.com/PG27AQ-3840x2160-G-SYNC-Gaming-Monitor/dp/B01AWGY9MG">Buy Now</a>
+                                <a id="link2">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
     <!-- Scripts Section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="js/list.js"></script>
+    
 
     <script>
         function myFunction() {
@@ -184,6 +184,7 @@
             document.getElementById("demo").innerHTML = text;
         }
     </script>
+    <script src="js/list.js"></script>
 </body>
 
 </html>
