@@ -113,3 +113,14 @@ $("#login-btn").on("click", function(event) {
     });
 
 });
+
+$(document).ready(function(){
+
+
+  $.get("/api/register", function(data){
+
+    console.log(data);
+      $(".name").html(data.first_name + " " + data.last_name)
+      $(".email").html(data.email)
+    })
+  })

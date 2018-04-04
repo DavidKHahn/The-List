@@ -1,7 +1,7 @@
 
 
-$(document).on("click", ".searchBtn",function () {
-event.preventDefault();
+$(document).on("click", ".searchBtn", function () {
+    event.preventDefault();
     var product = {
         name: $("#searchBar").val().trim()
     }
@@ -12,69 +12,64 @@ event.preventDefault();
         console.log(results);
 
         if (results.Items.Item.length > 10) {
-                    var items = $("<div>")
-            
-                    for (var i = 0; i < 11; i++) {
-                        console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
-                        console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
-                        console.log("ASIN #: " + results.Items.Item[i].ASIN);
-                        console.log("Image: " + results.Items.Item[i].LargeImage.URL);
-                        console.log("---------------")
-            
-                        $(items).append("<tr><td><img class='responsive-img' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>")
-                        $(items).append("<td>" + results.Items.Item[i].ItemAttributes.Title + "</td>")
-                        // $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
-                        $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
-                        "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
-                        "' data-url='" + results.Items.Item[i].DetailPageURL +
-                        "' data-image='" + results.Items.Item[i].LargeImage.URL +
-                        "'><i class='material-icons'>add</i></a></tr>")
-            
-                        //id will be changed to the search result div id
-                        $(".results").append(items);
-                    };
-                }
-                else {
+            var resultHtml = "";
 
-                    
-                    // var items = $("<tbody>")
-            
-                    // for (var i = 0; i < results.Items.Item.length; i++) {
-                    //     console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
-                    //     console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
-                    //     console.log("ASIN #: " + results.Items.Item[i].ASIN);
-                    //     console.log("Image: " + results.Items.Item[i].LargeImage.URL);
-                    //     console.log("---------------")
-            
-                    //     $(items).append("<tr><td> <img class='responsive-img' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>")
-                    //     $(items).append("<td>" + results.Items.Item[i].ItemAttributes.Title + "</td>")
-                    //     // $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
-                    //     $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
-                    //     "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
-                    //     "' data-url='" + results.Items.Item[i].DetailPageURL +
-                    //     "' data-image='" + results.Items.Item[i].LargeImage.URL +
-                    //     "'><i class='material-icons'>add</i></a></tr>")
-            
-                    //     //id will be changed to the search result div id
-                    //     $(".results").append(items);
-                    // };
-                    var resultHtml = "";
+            for (var i = 0; i < results.Items.Item.length; i++) {
+                resultHtml += "<tr>";
+                resultHtml += "<td> <img class='responsive-img image-result' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>";
+                resultHtml += "<td id='title-result'>" + results.Items.Item[i].ItemAttributes.Title + "</td>";
+                resultHtml += "<td><a class='modal-action modal-close btn-floating btn-small waves-effect waves-light cyan' id='add' data-asin='" + results.Items.Item[i].ASIN +
+                    "' data-name='" + results.Items.Item[i].ItemAttributes.Title +
+                    "' data-url='" + results.Items.Item[i].DetailPageURL +
+                    "' data-image='" + results.Items.Item[i].LargeImage.URL +
+                    "'><i class='material-icons'>add</i></a></td>";
+                resultHtml += "</tr>";
 
-                    for (var i = 0; i < results.Items.Item.length; i++) {
-                        resultHtml += "<tr>";
-                        resultHtml += "<td> <img class='responsive-img image-result' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>";
-                        resultHtml += "<td id='title-result'>" + results.Items.Item[i].ItemAttributes.Title + "</td>";
-                        resultHtml += "<td><a class='modal-action modal-close btn-floating btn-small waves-effect waves-light cyan' id='add' data-asin='" + results.Items.Item[i].ASIN + 
-                        "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
-                        "' data-url='" + results.Items.Item[i].DetailPageURL +
-                        "' data-image='" + results.Items.Item[i].LargeImage.URL +
-                        "'><i class='material-icons'>add</i></a></td>";
-                        resultHtml += "</tr>";
-                        
-                    };
-                    console.log(resultHtml);
-                    $(".results").append(resultHtml);
-                }
+            };
+            console.log(resultHtml);
+            $(".results").append(resultHtml);
+        }
+        else {
+
+
+            // var items = $("<tbody>")
+
+            // for (var i = 0; i < results.Items.Item.length; i++) {
+            //     console.log("Product Name: " + results.Items.Item[i].ItemAttributes.Title);
+            //     console.log("Amazon Link: " + results.Items.Item[i].DetailPageURL);
+            //     console.log("ASIN #: " + results.Items.Item[i].ASIN);
+            //     console.log("Image: " + results.Items.Item[i].LargeImage.URL);
+            //     console.log("---------------")
+
+            //     $(items).append("<tr><td> <img class='responsive-img' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>")
+            //     $(items).append("<td>" + results.Items.Item[i].ItemAttributes.Title + "</td>")
+            //     // $(items).append("<td> ASIN #: " + results.Items.Item[i].ASIN + "</td>")
+            //     $(items).append("<a class='btn-floating btn-large waves-effect waves-light red modal-action modal-close' id='add' data-asin='" + results.Items.Item[i].ASIN + 
+            //     "' data-name='" + results.Items.Item[i].ItemAttributes.Title + 
+            //     "' data-url='" + results.Items.Item[i].DetailPageURL +
+            //     "' data-image='" + results.Items.Item[i].LargeImage.URL +
+            //     "'><i class='material-icons'>add</i></a></tr>")
+
+            //     //id will be changed to the search result div id
+            //     $(".results").append(items);
+            // };
+            var resultHtml = "";
+
+            for (var i = 0; i < results.Items.Item.length; i++) {
+                resultHtml += "<tr>";
+                resultHtml += "<td> <img class='responsive-img image-result' src='" + results.Items.Item[i].MediumImage.URL + "'/></td>";
+                resultHtml += "<td id='title-result'>" + results.Items.Item[i].ItemAttributes.Title + "</td>";
+                resultHtml += "<td><a class='modal-action modal-close btn-floating btn-small waves-effect waves-light cyan' id='add' data-asin='" + results.Items.Item[i].ASIN +
+                    "' data-name='" + results.Items.Item[i].ItemAttributes.Title +
+                    "' data-url='" + results.Items.Item[i].DetailPageURL +
+                    "' data-image='" + results.Items.Item[i].LargeImage.URL +
+                    "'><i class='material-icons'>add</i></a></td>";
+                resultHtml += "</tr>";
+
+            };
+            console.log(resultHtml);
+            $(".results").append(resultHtml);
+        }
     }
     )
 
@@ -87,7 +82,7 @@ var cart = [];
 var listId;
 var number = 1;
 
-$(document).on("click", "#add", function() {
+$(document).on("click", "#add", function () {
     $(".results").empty();
     var newItem = {
         asin: $(this).data("asin"),
@@ -100,19 +95,19 @@ $(document).on("click", "#add", function() {
     $(".addItem").append("<p id='added-title'>" + newItem.name + "</p>");
     $(".addItem").append('<div class="added-desc input-field col s12"><textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Product #' + number + ' Description</label></div>');
 
-    number ++;
+    number++;
 
     console.log(newItem);
 
-    $.post("/api/item/" + newItem.ListId, newItem).then(function(data){
+    $.post("/api/item/" + newItem.ListId, newItem).then(function (data) {
         console.log("this is add " + data)
     })
 
-    
+
 })
 
 
-$(document).on("click", "#create", function() {
+$(document).on("click", "#create", function () {
     var id = window.localStorage.getItem("profileID");
     var total = {
         title: $("#title").val().trim(),
@@ -130,11 +125,27 @@ $(document).on("click", "#create", function() {
 
 
 
-    $.post("/api/list/" + id, total).then(function(data){
+    $.post("/api/list/" + id, total).then(function (data) {
         console.log("this is create " + data)
         listId = data;
     })
 
 })
+
+$(document).ready(function(){
+    $.post("/api/nav", {token: window.localStorage.getItem("token")}).then(function(data){
+   
+        console.log("frontend data" + JSON.stringify(data));
+      if (!data){  
+        window.localStorage.clear();  
+      }
+      else {
+  
+        $('.name').html(data.first_name + "&nbsp;&nbsp;" + data.last_name);
+        $('.email').html(data.email + "&nbsp;&nbsp;");
+        
+      }
+    });  
+  });
 
 

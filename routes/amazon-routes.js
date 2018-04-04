@@ -134,6 +134,18 @@ module.exports = function(app) {
         });
       });
 
+      app.post("/api/nav", function(req, res) {
+
+console.log("backend" + JSON.stringify(req.body, null, 2))
+
+        db.User.findOne({
+            where: {
+                token: req.body.token
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        })
+    })
 }
 
 
