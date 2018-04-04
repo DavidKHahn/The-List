@@ -173,16 +173,33 @@ module.exports = function (app) {
 
 
 
-    app.get("api/listpage/:listid", function(req, res){
+    app.get("/api/listpage/:listid", function(req, res){
         db.List.findOne({
             where: {
-                id: req.params.listid
+                id: parseInt(req.params.listid)
             }
-        })
+        }).then(function(response){
+            console.log("list" + response);
 
-        res.json(req.body)
+            res.json(response);
+        })
+        
+    })
+
+    app.get("/api/userpage/:token", function(req, res){
+        console.log(req.body);
+        db.User.findOne({
+            where: {
+                token: req.params.token
+            }
+        }).then(function(dbUserInfo){
+            console.log("user" + dbUserInfo)
+            res.json(dbUserInfo)
+        })
+ 
     })
 }
+
 
 
 

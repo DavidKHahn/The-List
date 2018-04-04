@@ -4,6 +4,7 @@
 $(document).ready(function() {
     
 var listId = window.localStorage.getItem("listid")
+var token = window.localStorage.getItem("token")
 
     $.get("/api/view/" + listId, function(data) {
         console.log("NEW PAGE DATA" + JSON.stringify(data));
@@ -46,5 +47,12 @@ var listId = window.localStorage.getItem("listid")
         $("#list-description").text(data.description);
 
     })
+
+    $.get("/api/userpage/" + token, function (bata) {
+        console.log("fucfucfuc" + JSON.stringify(bata))
+
+        $(".list-name").html(bata.first_name + "'s List");
+     })
+
 })
 
