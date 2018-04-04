@@ -11,7 +11,7 @@ $(document).ready(function(){
     else {
 
       $('#navLogin').html(data.first_name + "&nbsp;&nbsp;");
-      $('#navLogin').attr("href", "/profile");
+      $('#navLogin').attr("href", "/user");
       $('#navSignup').html("Sign Out");
       $('#navSignup').attr({"href": "/", "id":"logOutBtn"});
       $('#logOutBtn').on("click", function(){
@@ -19,6 +19,8 @@ $(document).ready(function(){
         window.localStorage.clear();
 
       });
+
+      $('#start-btn').html('<a href="/user" id="start-button" class="btn-large waves-effect waves-light cyan">Get Started</a>')
     }
   });  
 });
