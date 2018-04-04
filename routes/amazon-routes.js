@@ -118,10 +118,10 @@ module.exports = function(app) {
         res.send(req.body.asin)
     })
 
-    app.delete("/api/item/:name", function(req, res) {
+    app.delete("/api/item/:asin", function(req, res) {
         db.Item.destroy({
           where: {
-            name: req.params.name
+            asin: req.params.asin
           }
         }).then(function(dbItem) {
           res.json(dbItem);

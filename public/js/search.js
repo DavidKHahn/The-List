@@ -90,11 +90,19 @@ $(document).on("click", "#add", function () {
         url: $(this).data("url"),
         ListId: listId
     }
-    $(".addItem").append("<p id='added-header'>Product # " + number + ":</p>");
-    $(".addItem").append("<p id='added-title'>" + newItem.name + "</p>");
-    $(".addItem").append('<div class="added-desc input-field col s10"><textarea id="textarea2" class="materialize-textarea"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small red' id='delete-btn'><i class='material-icons'>delete</i></a></div>");
+
+    var newDiv = $("<div id='" + newItem.asin + "'>")
+
+    $(newDiv).append("<p id='added-header'>Product # " + number + ":</p>");
+    $(newDiv).append("<p id='added-title'>" + newItem.name + "</p>");
+    $(newDiv).append('<div class="added-desc input-field col s10"><textarea id="textarea2" class="materialize-textarea"></textarea><label for="textarea2">Product #' + number + "Description</label><a class='btn-floating btn-small red' id='delete-btn' data-asin='" + newItem.asin + "'><i class='material-icons'>delete</i></a></div>");
+    $("#finish-btn").html("<div class='btn cyan finish-btn'>Finish List</div>")
+
+    $(".addItem").append(newDiv)
 
     number++;
+
+    
 
     console.log(newItem);
 
@@ -120,9 +128,7 @@ $(document).on("click", "#create", function () {
     $("#product-search").empty();
     $("#product-search").html("<div class='input-field col s6'><input id='searchBar' type='text' class='validate'><label for='searchBar'>Product Search</label></div>");
     $("#product-search").append("<div data-target='modal1' class='btn modal-trigger searchBtn cyan'>Search</div>")
-
-
-
+    
 
     $.post("/api/list/" + id, total).then(function (data) {
         console.log("this is create " + data)
@@ -146,5 +152,26 @@ $(document).ready(function(){
       }
     });  
   });
+
+$(document).ready(function(){
+
+
+
+  $(document).on("click", "#delete-btn", deleteItem)
+
+  function deleteItem(event) {
+    event.stopPropagation();
+    var asin = $(this).data("asin");
+    $.ajax({
+      method: "DELETE",
+      url: "/api/item/" + asin
+    }).then(function(){
+        console.log("item deleted")
+        $("#" + asin).empty();
+
+    });
+  }
+
+})
 
 
