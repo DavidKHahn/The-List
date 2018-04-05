@@ -7,9 +7,13 @@ We have created a project using the Amazon Affialiate API, MaterializeCSS, MYSQL
 How-To-Use The LIST:
 
 Step 1: Sign-up!
+
 Step 2: Search for the item of your choice and briefly describe or review your selection.
+
 Step 3: Add the item onto your personal list to share!
+
 Step 4: Repeat until you have a list of items and you're done.
+
 Step 5: Get paid when someone buys an item off your list.
 
 Below, we have a preview of 'The List' in action:
