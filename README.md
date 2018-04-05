@@ -2,7 +2,7 @@
 
 The List
 
-We have created a project using the Amazon Affialiate API, MaterializeCSS, MYSQL database and the npm-token in order to design a blog-like list.  Our list allows users to pick out items from the Amazon database and write a description or a review.  The list of items can be shared to friends and family as a reference to recommend a specific PC game build or even a set of supplements and gear for the gym.  Many YouTubers, gamers, and celebrities can use this list in order to promote social media like ad campaigns while earning money through commmission from Amazon Affialiate API (Amazon pays a commission for the items purchased through the list of items provided in our app and your own API key).
+We have created a project using the Amazon Affialiate API, MaterializeCSS, MYSQL database, Heroku and the npm-token in order to design a blog-like list.  Our list allows users to pick out items from the Amazon database and write a description or a review.  The list of items can be shared to friends and family as a reference to recommend a specific PC game build or even a set of supplements and gear for the gym.  Many YouTubers, gamers, and celebrities can use this list in order to promote social media like ad campaigns while earning money through commmission from Amazon Affialiate API (Amazon pays a commission for the items purchased through the list of items provided in our app and your own API key).
 
 How-To-Use The LIST:
 
