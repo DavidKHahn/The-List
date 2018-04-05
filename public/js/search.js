@@ -90,7 +90,7 @@ $(document).on("click", "#add", function () {
         url: $(this).data("url"),
         ListId: listId
     }
-
+    
     var newDiv = $("<div class='col l12' id='" + newItem.asin + "'>")
 
     $(newDiv).append("<p id='added-header'>Product # " + number + ":</p>");
@@ -180,6 +180,7 @@ $(document).ready(function () {
 
 
         $("#addItem").append("<p>" + itemDescription + "</p>")
+        M.toast({html: 'Description Saved'});
 
         $.ajax({
             method: "PUT",
