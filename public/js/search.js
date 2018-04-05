@@ -199,5 +199,9 @@ $(document).ready(function () {
     $(document).on("click", "#finish-btn", function() {
         window.location.href = "/finished";
     })
+
+    $(document).on("click", "#mylist", function() {
+        window.location.href = "/finished";
+    })
 })
 
