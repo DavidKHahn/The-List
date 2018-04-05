@@ -22,3 +22,7 @@ Below, we have a preview of 'The List' in action:
 <img width="1440" alt="screen shot 2018-04-04 at 9 53 26 pm" src="https://user-images.githubusercontent.com/34965292/38347899-290d159e-3853-11e8-9e21-753aa333d587.png">
 
 <img width="1440" alt="screen shot 2018-04-04 at 9 53 32 pm" src="https://user-images.githubusercontent.com/34965292/38347902-2b679e2c-3853-11e8-8129-d035451fd106.png">
+
+
+
+Created by Peter Hoang, Alex Rhee, Franky Viray, and David Hahn.
