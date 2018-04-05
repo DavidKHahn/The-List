@@ -10,7 +10,15 @@ h6{
     font-size: 150%;
 }
 img {
-    width: 300px;
+    width: 300px !important;
+    margin-left: auto;
+    margin-right: auto;   
+}
+a {
+    color: white;
+}
+.sum {
+    color: black;
 }
 
 /* Image Hover */
@@ -53,13 +61,26 @@ img {
   font-size: 16px;
   padding: 16px 32px;
 }
-a {
+/* a {
     color: white;
 
-}
+} */
 
 /* End image hover */
 
 .summary {
     text-align: center;
+}
+
+/* Edit Buttons */
+button  {
+    float: right;
+    background: none;
+    border: none;
+    color: rgb(28, 201, 201)
+}
+
+button:focus {
+    /* background-color: rgb(42, 183, 169); */
+    outline: none;
 }

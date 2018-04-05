@@ -7,7 +7,7 @@ var listId = window.localStorage.getItem("listid")
 var token = window.localStorage.getItem("token")
 
     $.get("/api/view/" + listId, function(data) {
-        console.log("NEW PAGE DATA" + JSON.stringify(data));
+        //console.log("NEW PAGE DATA" + JSON.stringify(data));
 
         //area where the list will be displayed
 
@@ -19,7 +19,7 @@ var token = window.localStorage.getItem("token")
 
         for (var i = 0; i < data.length; i++) {
 
-            console.log("test!!!!!!!!" + data[i].name)
+            //console.log("test!!!!!!!!" + data[i].name)
 
             dataName = "name" + counter;
             dataLink = "link" + counter;
@@ -31,8 +31,8 @@ var token = window.localStorage.getItem("token")
             console.log(dataDescrip);
             console.log(dataImage);
 
-            $("#name" + counter).html(data[i].name)
-            $("#link" + counter).attr("href", data[i].url)
+            $(".name" + counter).html(data[i].name)
+            $(".link" + counter).attr("href", data[i].url)
             $("#description" + counter).html(data[i].description)
             $("#image" + counter).attr("src", data[i].image)
 
@@ -41,7 +41,7 @@ var token = window.localStorage.getItem("token")
     })
 
     $.get("api/listpage/" + listId, function(data) {
-        console.log("SHITSHITSHIT" + JSON.stringify(data))
+        //console.log(JSON.stringify(data))
 
         $("#list-name").text(data.title);
         $("#list-description").text(data.description);
@@ -49,7 +49,7 @@ var token = window.localStorage.getItem("token")
     })
 
     $.get("/api/userpage/" + token, function (bata) {
-        console.log("fucfucfuc" + JSON.stringify(bata))
+        //console.log(JSON.stringify(bata))
 
         $(".list-name").html(bata.first_name + "'s List");
      })

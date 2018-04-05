@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
-    <link rel="stylesheet" href="css/list2.css">
+    <link rel="stylesheet" href="css/list.css">
     <title>The List</title>
 </head>
 
@@ -17,7 +17,7 @@
     <nav class="cyan darken-1" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="/user" class="brand-logo">
-                <span class="font list-name">Peter's List</span>
+                <span class="font list-name"></span>
             </a>
             <!-- <ul class="right">
                 <li>
@@ -29,52 +29,32 @@
 
 
     <div id="main-content">
-
-        <!-- <div id="myP">This is a paragraph. Click the button to make me editable.</p>
-
-            <button onclick="myFunction()">Edit</button> -->
-        <!--             
-            <p id="demo"></p>
-             -->
-<br>
         <div class="container">
             <div class="row">
-                <div id="myP" class="col l12">
-                    <br>
-                    <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                    <br>
-                    <h3 id="list-name"></h3>
+                <div class="col l12">
+                    <h4 id="list-name"></h4>
                     <p id="list-description"></p>
                 </div>
-
             </div>
-            <div id ="myK" class="row">
-                    <br>
-                    <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                    <br>
+            <div class="row">
                 <div class="col l5">
-                    
-                    <div class="image-container">
-                        
+                    <div class="image-container">    
                         <img class="image" id="image1">
                         <div class="middle">
                             <div class="text">
-                                <a id="link1">Buy Now</a>
+                                <a class="link1">More Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col l5">
-                    <h6 id="name1"></h6>
+                    <h6 class="name1"></h6>
                     <p id="description1"></p>
                 </div>
             </div>
-            <div id ="myD"class="row">
-                    <br>
-                    <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                    <br>
+            <div class="row">
                 <div class="col l5">
-                    <h6 id="name2"></h6>
+                    <h6 class="name2"></h6>
                     <p id="description2"></p>
                 </div>
                 <div class="col l5">
@@ -82,76 +62,67 @@
                         <img id="image2" class="image">
                         <div class="middle">
                             <div class="text">
-                                <a id="link2">Buy Now</a>
+                                <a class="link2">More Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id ="myZ"class="row">
-                    <br>
-                        <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                        <br>
+            <div class="row">
                 <div class="col l5">
                     <div class="image-container">
                         <img id="image3" class="image">
                         <div class="middle">
                             <div class="text">
-                                <a id="link3">Buy Now</a>
+                                <a class="link3">More Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col l5">
-                    <h6 id="name3"></h6>
+                    <h6 class="name3"></h6>
                     <p id="description3"></p>
                 </div>
             </div>
-            <div id ="myD"class="row">
-                <br>
-                <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                <br>
-            <div class="col l5">
-                <h6 id="name4"></h6>
-                <p id="description4"></p>
-            </div>
-            <div class="col l5">
-                <div class="image-container">
-                    <img id="image4" class="image">
-                    <div class="middle">
-                        <div class="text">
-                            <a id="link4">Buy Now</a>
+            <div class="row">
+                <div class="col l5">
+                    <h6 class="name4"></h6>
+                    <p id="description4"></p>
+                </div>
+                <div class="col l5">
+                    <div class="image-container">
+                        <img id="image4" class="image">
+                        <div class="middle">
+                            <div class="text">
+                                <a class="link4">Buy Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-            <div id ="myZ"class="row">
-                <br>
-                    <button onclick="myFunction()" input type="image" id="myimage" style="height:30px;width:50px;"><i class="material-icons">create</i></button>
-                    <br>
-            <div class="col l5">
-                <div class="image-container">
-                    <img id="image5" class="image">
-                    <div class="middle">
-                        <div class="text">
-                            <a id="link5">Buy Now</a>
+            <div class="row">
+                <div class="col l5">
+                    <div class="image-container">
+                        <img id="image5" class="image">
+                        <div class="middle">
+                            <div class="text">
+                                <a class="link5">Buy Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col l5">
+                    <h6 class="name5"></h6>
+                    <p id="description5"></p>
+                </div>
             </div>
-            <div class="col l5">
-                <h6 id="name5"></h6>
-                <p id="description5"></p>
-            </div>
-        </div>
             <div class="row summary">
                 <h6>Summary</h6>
-                <p id="name1"></p>
-                <p id="name2"></p>
-                <p id="name3"></p>
-                <p id="name4"></p>
-                <p id="name5"></p>
+                <a class="sum link1"><p class="name1"></p></a>
+                <a class="sum link2"><p class="name2"></p></a>
+                <a class="sum link3"><p class="name3"></p></a>
+                <a class="sum link4"><p class="name4"></p></a>
+                <a class="sum link5"><p class="name5"></p></a>
             </div>
         </div>
     </div>
@@ -195,17 +166,6 @@
     <!-- Scripts Section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    
-
-    <script>
-        function myFunction() {
-            document.getElementById("myP").contentEditable = true;
-            document.getElementById("myK").contentEditable = true;
-            document.getElementById("myD").contentEditable = true;
-            document.getElementById("myZ").contentEditable = true;
-            document.getElementById("demo").innerHTML = text;
-        }
-    </script>
     <script src="js/list.js"></script>
 </body>
 
